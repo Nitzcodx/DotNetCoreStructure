@@ -69,6 +69,13 @@ namespace DotNetCoreStructure
 
             Console.WriteLine("-------------------------------------------------------------");
 
+            MyAbstractClass abstractObj = new Abstraction();
+            abstractObj.NonAbstratMethod();
+            Console.WriteLine($"Abstract class propety value is {abstractObj.AbstractClassProperty}");
+            Console.WriteLine($"Message from abstract method: {abstractObj.AbstractMethod()}");
+
+            Console.WriteLine("-------------------------------------------------------------");
+
         }
     }
 }
