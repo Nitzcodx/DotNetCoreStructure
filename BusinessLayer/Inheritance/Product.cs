@@ -8,6 +8,8 @@ namespace BusinessLayer
     {
         public string ProductName { get; set; }
 
+        public int Cost { get; set; }
+
         public Product(string name)
         {
             ProductName = name;

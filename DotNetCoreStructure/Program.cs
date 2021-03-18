@@ -8,12 +8,12 @@ namespace DotNetCoreStructure
     {
 
         //-------------------------------------------------------//
-             //    Product <---has a---  Cart
-             //       /\
-             //      /  \is a
-             //     /    \
-             //    /      \
-             //Software  Hardware
+        //    Product <---has a---  Cart
+        //       /\
+        //      /  \is a
+        //     /    \
+        //    /      \
+        //Software  Hardware
         //-------------------------------------------------------//
 
 
@@ -51,7 +51,7 @@ namespace DotNetCoreStructure
             myFirstCart.PrintProducts();
 
             Console.WriteLine("-------------------------------------------------------------");
-           
+
             Product visualStudio = new SoftwareProduct("Visual Studio v2019");  //Dynamic Polymorphism
             Product adreno = new HardwareProduct("Adreno");
             Console.WriteLine(visualStudio.PrintProduct(visualStudio)); //Dynamic Method Dispatch
@@ -73,6 +73,28 @@ namespace DotNetCoreStructure
             abstractObj.NonAbstratMethod();
             Console.WriteLine($"Abstract class propety value is {abstractObj.AbstractClassProperty}");
             Console.WriteLine($"Message from abstract method: {abstractObj.AbstractMethod()}");
+
+            Console.WriteLine("-------------------------------------------------------------");
+
+            Developer nitish = new BackEndDeveloper("Nitish");
+            nitish.AddTechStack(new string[]{"C#,SQL Server, Entity Framework","Web API", "DevOps"} );
+
+            Developer nitin = new FrontEndDeveloper("Nitin");
+            nitin.AddTechStack(new string[] { "HTML5", "CSS3", "JavaScript", "Bootstrap", "Angular", "Zira" });
+
+            SupportEngineer nikhil = new SupportEngineer("Nikhil");
+
+            Product fullStackApp = new Product("Library Management System");
+            fullStackApp.Cost = 300000;
+
+            decimal _nitishCost = fullStackApp.Cost * ((BackEndDeveloper)nitish).GetUtilization() / 100;
+            decimal _nitinCost = fullStackApp.Cost * ((FrontEndDeveloper)nitin).GetUtilization() / 100;
+            decimal _nikhilCost = fullStackApp.Cost * nikhil.GetUtilization() / 100;
+
+            Console.WriteLine($"Product: {fullStackApp.ProductName} \n" +
+                $"Total Cost: {fullStackApp.Cost} \n" +
+                $"Development Cost: {_nitishCost + _nitinCost} \n" +
+                $"SupportCost: {_nikhilCost}");
 
             Console.WriteLine("-------------------------------------------------------------");
 
