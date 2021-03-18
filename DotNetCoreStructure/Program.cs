@@ -16,6 +16,23 @@ namespace DotNetCoreStructure
         //Software  Hardware
         //-------------------------------------------------------//
 
+        //-------------------------------------------------------//
+        //      IUtilization----            ---IWeekendUtilization
+        //                      |           |
+        //                      |           |
+        //                      |           |
+        //                      |           |   
+        //                      |           |
+        //    Developer         |           |
+        //       /\             |           |
+        //      /  \is a        |           |
+        //     /    \           |           |
+        //    /      \          |           |
+        //Backend  Frontend     |   Support Engineer
+        //   |        |         |           |
+        //   -------------------------------
+        //-------------------------------------------------------//
+
 
 
         static void Main(string[] args)
