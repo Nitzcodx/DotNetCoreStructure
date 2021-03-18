@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BusinessLayer
 {
-    public class SupportEngineer : IUtilization
+    public class SupportEngineer : IUtilization, IWeekendUtilization
     {
         public string EngineerName { get; set; }
 
@@ -16,6 +16,11 @@ namespace BusinessLayer
         public int GetUtilization()
         {
             return 20;
+        }
+
+        int IWeekendUtilization.GetUtilizaton()
+        {
+            return 5000;
         }
     }
 }

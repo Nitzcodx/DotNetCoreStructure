@@ -77,6 +77,7 @@ namespace DotNetCoreStructure
             Console.WriteLine("-------------------------------------------------------------");
 
             Developer nitish = new BackEndDeveloper("Nitish");
+            // Can use interface to instantiate : IUtilization nitish = new BackEndDeveloper("Nitish");
             nitish.AddTechStack(new string[]{"C#,SQL Server, Entity Framework","Web API", "DevOps"} );
 
             Developer nitin = new FrontEndDeveloper("Nitin");
@@ -96,7 +97,13 @@ namespace DotNetCoreStructure
                 $"Development Cost: {_nitishCost + _nitinCost} \n" +
                 $"SupportCost: {_nikhilCost}");
 
+            //Explicit interface to differentiate between same method names from different interfaces
+            IWeekendUtilization _noopur = new SupportEngineer("Noopur");
+            Console.WriteLine($"Updated product cost: {fullStackApp.Cost + _noopur.GetUtilizaton()}");
+
             Console.WriteLine("-------------------------------------------------------------");
+
+
 
         }
     }

@@ -4,9 +4,9 @@ using System.Text;
 
 namespace BusinessLayer
 {
-    public class FrontEndDeveloper : Developer,IUtilization
+    public class FrontEndDeveloper : Developer, IUtilization, IWeekendUtilization
     {
-        public FrontEndDeveloper(string name):base(name)
+        public FrontEndDeveloper(string name) : base(name)
         {
 
         }
@@ -18,6 +18,11 @@ namespace BusinessLayer
         public int GetUtilization()
         {
             return 40;
+        }
+
+        int IWeekendUtilization.GetUtilizaton()
+        {
+            return 2000;
         }
     }
 }
