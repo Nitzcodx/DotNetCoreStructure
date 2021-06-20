@@ -98,7 +98,7 @@ namespace DotNetCoreStructure
             nitish.AddTechStack(new string[]{"C#,SQL Server, Entity Framework","Web API", "DevOps"} );
 
             Developer nitin = new FrontEndDeveloper("Nitin");
-            nitin.AddTechStack(new string[] { "HTML5", "CSS3", "JavaScript", "Bootstrap", "Angular", "Zira" });
+            nitin.AddTechStack(new string[] { "HTML5", "CSS3", "JavaScript", "Bootstrap", "Angular", "Jira" });
 
             SupportEngineer nikhil = new SupportEngineer("Nikhil");
 
@@ -120,7 +120,10 @@ namespace DotNetCoreStructure
 
             Console.WriteLine("-------------------------------------------------------------");
 
+            CarInventory DeltaTraders = new CarInventory();
+            Console.WriteLine(DeltaTraders.GetInventory());
 
+            Console.WriteLine("-------------------------------------------------------------");
 
         }
     }
