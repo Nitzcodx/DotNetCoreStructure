@@ -124,7 +124,35 @@ namespace DotNetCoreStructure
             Console.WriteLine(DeltaTraders.GetInventory());
 
             Console.WriteLine("-------------------------------------------------------------");
+            EventDate Date = new EventDate();
+            Date.AddDate(new DateTime(2004, 02, 12));
+            Date.AddDate(DateTime.Today);
+            Date.AddDate("23-May-2018");
+            Console.WriteLine(Convert.ToString(Date.GetSpecialDate()));
 
+            Console.WriteLine("-------------------------------------------------------------");
+            MyCollections collections = new MyCollections();
+            collections.AddToArrayList();
+            Console.WriteLine($"Items in array list:" + Environment.NewLine +
+                $"{collections.GetFromArrayList()}"); ;
+            collections.AddToGenericList();
+            Console.WriteLine($"tems in generic list<>: " + Environment.NewLine +
+                $"{collections.GetFromGenericList()}");
+            collections.AddToDictionary();
+            Console.WriteLine($"Items in generic dictionary:" + Environment.NewLine +
+                $"{collections.GetFromGenericDictionary()}");
+            Console.WriteLine($"Keys- " + Environment.NewLine +
+                $"{collections.GetKeysFromGenericDictionary()}");
+            Console.WriteLine($"Values- " + Environment.NewLine +
+                $"{collections.GetValuesFromGenericDictionary()}");
+            Console.WriteLine($"Search for Sleepwell:{(collections.SearchInGenericDictionary("Sleepwell")?"Found":"NA")} ");
+            Console.WriteLine($"Search for Book:{(collections.SearchInGenericDictionary("Pale Blue Dot") ? "Found" : "NA")} ");
+            Console.WriteLine();
+            collections.AddToGenericSortedList();
+            Console.WriteLine($"Items in generic sorted list:" + Environment.NewLine +
+                $"{collections.GetAlphanumericSortedFromSortedList()}");
+
+            Console.WriteLine("-------------------------------------------------------------");
         }
     }
 }
