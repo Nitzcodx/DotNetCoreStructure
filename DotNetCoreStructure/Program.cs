@@ -153,6 +153,16 @@ namespace DotNetCoreStructure
                 $"{collections.GetAlphanumericSortedFromSortedList()}");
 
             Console.WriteLine("-------------------------------------------------------------");
+            CSharpEnhancements newVariables = new CSharpEnhancements();
+            string outVariable = string.Empty;
+            Console.WriteLine($"Explicit Variable:{newVariables.VariableTypes(out outVariable)}" + Environment.NewLine +
+                $"Implicit Variable:{outVariable}");
+            Console.WriteLine();
+            Initializers init = new Initializers { };
+            Console.WriteLine(init.RunMethods());
+
+            Console.WriteLine("-------------------------------------------------------------");
+
         }
     }
 }
