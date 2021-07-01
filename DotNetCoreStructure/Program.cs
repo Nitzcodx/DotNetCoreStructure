@@ -95,7 +95,7 @@ namespace DotNetCoreStructure
 
             Developer nitish = new BackEndDeveloper("Nitish");
             // Can use interface to instantiate : IUtilization nitish = new BackEndDeveloper("Nitish");
-            nitish.AddTechStack(new string[]{"C#,SQL Server, Entity Framework","Web API", "DevOps"} );
+            nitish.AddTechStack(new string[] { "C#,SQL Server, Entity Framework", "Web API", "DevOps" });
 
             Developer nitin = new FrontEndDeveloper("Nitin");
             nitin.AddTechStack(new string[] { "HTML5", "CSS3", "JavaScript", "Bootstrap", "Angular", "Jira" });
@@ -145,7 +145,7 @@ namespace DotNetCoreStructure
                 $"{collections.GetKeysFromGenericDictionary()}");
             Console.WriteLine($"Values- " + Environment.NewLine +
                 $"{collections.GetValuesFromGenericDictionary()}");
-            Console.WriteLine($"Search for Sleepwell:{(collections.SearchInGenericDictionary("Sleepwell")?"Found":"NA")} ");
+            Console.WriteLine($"Search for Sleepwell:{(collections.SearchInGenericDictionary("Sleepwell") ? "Found" : "NA")} ");
             Console.WriteLine($"Search for Book:{(collections.SearchInGenericDictionary("Pale Blue Dot") ? "Found" : "NA")} ");
             Console.WriteLine();
             collections.AddToGenericSortedList();
@@ -162,7 +162,29 @@ namespace DotNetCoreStructure
             Console.WriteLine(init.RunMethods());
 
             Console.WriteLine("-------------------------------------------------------------");
-
+            PushNotifications notification = new PushNotifications();
+            Console.WriteLine($"Single Cast Delegation:" + Environment.NewLine +
+                $"{notification.Push()}");
+            Console.WriteLine();
+            Console.WriteLine($"Message to backend developer using Multi Cast Delegation:" + Environment.NewLine +
+                $"{notification.Push(to: nitish)}");
+            Console.WriteLine($"Message to frontend developer using Multi Cast Delegation:" + Environment.NewLine +
+                $"{notification.Push(to: nitin)}");
+            Console.WriteLine($"Anonymous Method Says : {notification.birthdayNotification(nitish.DeveloperName)}");
+            Console.WriteLine("-------------------------------------------------------------");
+            LambdaExpression lambdaExpression = new LambdaExpression();
+            Console.WriteLine($"{lambdaExpression.lambdaExp("Himanshu")}");
+            Console.WriteLine(lambdaExpression.getGreeting("Gunjan"));
+            lambdaExpression.displayGreeting("Rishi");
+            Console.WriteLine($"That's {lambdaExpression.pred("Deepali")}");
+            Console.WriteLine("-------------------------------------------------------------");
+            int number = 23;
+            string testString = "lorem ipsum";
+            Console.WriteLine($"Extenion Methods:" + Environment.NewLine +
+                $"Factors Count:{number.GetFactorsCount()}" + Environment.NewLine +
+                $"IsEven:{number.IsEven()}" + Environment.NewLine +
+                $"Pascal Casing:{testString.GetPascalCase()}");
+            Console.WriteLine("-------------------------------------------------------------");
         }
     }
 }
