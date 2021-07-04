@@ -209,6 +209,8 @@ namespace DotNetCoreStructure
             fileHandle.Write(nitish);
             Console.WriteLine($"File Read as follows -" + Environment.NewLine +
                 $"{fileHandle.Read()}");
+            Console.WriteLine("-------------------------------------------------------------");
+            Console.WriteLine(AsynchProgram.ReadData());
         }
     }
 }
