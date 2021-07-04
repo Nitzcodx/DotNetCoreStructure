@@ -204,6 +204,11 @@ namespace DotNetCoreStructure
 
             Console.WriteLine($"Joined Products:" + Environment.NewLine +
                 $"{_query.JoinProducts()}");
+            Console.WriteLine("-------------------------------------------------------------");
+            FileHandler fileHandle = new FileHandler { Path=Environment.CurrentDirectory+ @"\FileIO.csv" };
+            fileHandle.Write(nitish);
+            Console.WriteLine($"File Read as follows -" + Environment.NewLine +
+                $"{fileHandle.Read()}");
         }
     }
 }
