@@ -185,6 +185,25 @@ namespace DotNetCoreStructure
                 $"IsEven:{number.IsEven()}" + Environment.NewLine +
                 $"Pascal Casing:{testString.GetPascalCase()}");
             Console.WriteLine("-------------------------------------------------------------");
+
+            LetsQuery _query = new LetsQuery();
+            string immediateRes, deferredRes;
+            _query.GetProducts(out deferredRes, out immediateRes);
+
+            Console.WriteLine($"Deferred Execeution Output:" + Environment.NewLine +
+                $"{deferredRes}");
+
+            Console.WriteLine($"Immediate Execution Output:" + Environment.NewLine +
+                $"{immediateRes}");
+
+            Console.WriteLine($"Filtered Output:" + Environment.NewLine +
+                $"{_query.GetRefinedProducts()}");
+
+            Console.WriteLine($"Grouped Products:" + Environment.NewLine +
+                $"{_query.GroupByProducts()}");
+
+            Console.WriteLine($"Joined Products:" + Environment.NewLine +
+                $"{_query.JoinProducts()}");
         }
     }
 }

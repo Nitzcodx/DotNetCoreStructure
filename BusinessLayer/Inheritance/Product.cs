@@ -10,6 +10,8 @@ namespace BusinessLayer
 
         public int Cost { get; set; }
 
+        public int Version { get; set; }
+
         public Product(string name)
         {
             ProductName = name;
