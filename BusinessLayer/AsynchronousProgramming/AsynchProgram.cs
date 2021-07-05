@@ -28,7 +28,7 @@ namespace BusinessLayer
         {
             //connect to network
             string data = "This is data from server";
-            Thread.Sleep(10000);    //10 sec
+            Thread.Sleep(5000);    //5 sec
             return data;
         }
 
@@ -38,7 +38,7 @@ namespace BusinessLayer
             //string res = ReadFile();
             //string res = Task.Run(() => ReadFile());
             Task<string> res = Task.Run(() => ReadFile());
-            string test = "a" + "b";    //Some operation completes before ReadFle completes
+            string test = "a" + "b";    //Some operation completes before ReadFile completes
             string result = await res;  //await waits for the task
             return result;
 

@@ -211,6 +211,39 @@ namespace DotNetCoreStructure
                 $"{fileHandle.Read()}");
             Console.WriteLine("-------------------------------------------------------------");
             Console.WriteLine(AsynchProgram.ReadData());
+            Console.WriteLine("-------------------------------------------------------------");
+            Memory obj = null;
+            try
+            {
+                obj = new Memory();
+
+            }
+            catch (Exception)
+            {
+                
+            }
+            finally
+            {
+                obj.Dispose();  //Destroy objects
+            }
+            Console.WriteLine("Main Ends");
+            Console.WriteLine("-------------------------------------------------------------");
+
+            #region Best Practices
+            //Following are a few of the best practices that can be followed either to improve the performance of the application or to improve the developer productivity or at times, even both:
+
+            //Use appropriate exception handlers to avoid abnormal termination of the program
+
+            //Prefer generic collections over non-generic collections as non - generic collections involve boxing and unboxing which will be a performance overhead and are also not type safe
+
+            //  Delegates can provide access to private methods and hence use delegates with care
+
+            //  When you are not sure of the type of data returned by a collection or a method, make use of either implicitly typed local variables("var" keyword) or "dynamic" variables
+
+            // LINQ queries help us to access the data from multiple data sources in a consistent manner
+
+            // Asynchronous Programming can be used in situations where you want the UI of the application to be available with the user while some processing is taking place in the background
+            #endregion
         }
     }
 }
