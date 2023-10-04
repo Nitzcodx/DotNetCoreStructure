@@ -42,7 +42,7 @@ jobs:
       run: dir
 
     - name: Upload
-    - uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3
       with:
         name: my-artifact
         path: ./DotNetCoreStructure/DotNetCoreStructure/bin/debug/net6.0/DotNetCoreStructure.dll
