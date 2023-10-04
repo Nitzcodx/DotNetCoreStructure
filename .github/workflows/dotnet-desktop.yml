@@ -1,0 +1,41 @@
+name: .NET Core Desktop
+
+on:
+  push:
+    branches: [ "CSharpLearning" ]
+  pull_request:
+    branches: [ "CSharpLearning" ]
+
+jobs:
+
+  build:
+
+    strategy:
+      matrix:
+        configuration: [Debug, Release]
+
+    runs-on: windows-latest  
+
+    env:
+      Solution_Name: your-solution-name                         
+      Test_Project_Path: your-test-project-path                 
+      Wap_Project_Directory: your-wap-project-directory-name    
+      Wap_Project_Path: your-wap-project-path                   
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    # Install the .NET Core workload
+    - name: Install .NET Core
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 6.0.x
+
+    - name: Set env
+      run: echo "Solution_Name=2.0" >> "$GITHUB_ENV 
+
+    - name: Build
+      run: dotnet build DotNetCoreStructure.sln -p:version=${{ env.Solution_Name }}
