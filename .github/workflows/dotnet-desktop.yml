@@ -33,7 +33,7 @@ jobs:
       run: echo "version=2.0" >> $env:GITHUB_ENV 
 
     - name: Show
-      run: echo "${{env:version}}"
+      run: echo "$env:version"
 
     - name: Build
       run: dotnet build DotNetCoreStructure.sln -p:version=$env:version
