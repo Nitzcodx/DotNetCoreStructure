@@ -32,5 +32,17 @@ jobs:
     - name: Set env
       run: echo "version=2.0" >> $env:GITHUB_ENV 
 
+    - name: Show
+      run: echo "${{env:version}"
+
     - name: Build
       run: dotnet build DotNetCoreStructure.sln -p:version=$env:version
+
+    - name: Show Path
+      run: dir
+
+    - name: Upload
+    - uses: actions/upload-artifact@v3
+      with:
+        name: my-artifact
+        path: ./DotNetCoreStructure/DotNetCoreStructure/bin/debug/net6.0/DotNetCoreStructure.dll
